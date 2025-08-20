@@ -1,4 +1,4 @@
-// while repite un bloque de código mientras la condición sea verdadera.
+// while repite un bloque de código mientras la condición sea verdadera..
 let contador = 0;
 while (contador < 5) {
     console.log("Contador:", contador);
@@ -7,9 +7,9 @@ while (contador < 5) {
 console.log("Fin del ciclo while");
 
 /*
-Evalúa la condición.
+Evalúa la condición..
 
-Si es true, ejecuta el código dentro.
+Si es true, ejecuta el código dentro...
 
 Vuelve a evaluar.
 
