@@ -1,6 +1,6 @@
 // 📦 Paquete: define en qué "carpeta lógica" está la clase
 // Debe coincidir con la estructura de carpetas en tu proyecto
-package javaa.clase_2;
+
 
 // 📥 Importamos la clase Scanner para poder leer datos del teclado
 import java.util.Scanner;
