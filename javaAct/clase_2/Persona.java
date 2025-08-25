@@ -10,7 +10,7 @@ vamos a poder crear objetos. Un Objeto es una instancia de una clase.
 En los objetos vamos a asignar valores, en la clase vamos a definir atributos y
 métodos de manera general, es como el molde para crear objetos.
 */
-package Clase2Ejercicio3ClasesObjetos;//el package es como una carpeta donde se clasfican las clases
+
 
 public class Persona {//esta es nuestra plantilla llamada persona
 //public: la clase debe ser pública para poder acceder desde otros archivos

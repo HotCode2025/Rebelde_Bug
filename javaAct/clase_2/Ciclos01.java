@@ -1,6 +1,6 @@
 //Ejercicio 1: Leer un numero y mostrar su cuadrado
 //repetir el proceso hasta que se introduzca un numero negativo
-package Ciclos01;
+
 
 import java.util.Scanner;
 
