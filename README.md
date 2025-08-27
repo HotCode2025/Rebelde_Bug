@@ -1,3 +1,26 @@
+# Grupo Rebelde Bug 💻🐞
+
+Somos el grupo **Rebelde Bug**, un equipo de estudiantes de la UTN trabajando de forma colaborativa en las actividades de las clases.  
+En este repositorio iremos subiendo los ejercicios, proyectos y prácticas desarrolladas en conjunto.
+
+## Integrantes 👥
+- Camila Scheurer  
+- Zoé Geraldine Garnica  
+- Maximiliano Foglia  
+- Rubén Marchisio  
+- José Cueva  
+- Melina Denise Gallo  
+- Aramayo Micaela Cynthia  
+- Ivana Daniela Molina  
+- Jimena Karin Pérez  
+
+---
+
+## Objetivo 🚀
+Este repositorio será nuestro espacio de trabajo grupal donde subiremos las **actividades de las clases** para organizarnos mejor y mantener un registro del progreso de todos.  
+
+---
+
 # Clase 1 - Uso de GitHub
 
 GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como **servidores remotos** y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
