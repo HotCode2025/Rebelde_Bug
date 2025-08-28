@@ -274,3 +274,78 @@ Para solucionarlo:
 4. Borrar la rama `master` (ya no será necesaria).  
 
 ---
+# Clase 3 - Cambios en GitHub: de *master* a *main*
+
+El escritor argentino **Julio Cortázar** afirma que las palabras tienen *color* y *peso*.  
+Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo:  
+- **Feo** no es lo mismo que **desagradable**.  
+- **Aromático** no es lo mismo que **oloroso**.  
+
+👉 Los sinónimos no expresan lo mismo, no tienen el mismo “color” ni el mismo “peso”.  
+Y sí, esta reflexión también forma parte de la enseñanza profesional de **Git & GitHub**.
+
+---
+
+## 1. Contexto del cambio
+
+Desde el **1 de octubre de 2020**, GitHub cambió el nombre de la rama principal:  
+- Antes: `master`  
+- Ahora: `main`  
+
+Este cambio surge como consecuencia del movimiento **#BlackLivesMatter**, ya que la industria tecnológica ha usado durante años términos como *master/slave*, *blacklist/whitelist*, los cuales hoy se busca reemplazar por expresiones más inclusivas.  
+
+**Las palabras importan.**  
+Por lo tanto, de aquí en adelante, cada vez que encuentres la palabra *master* debes entender que se refiere a *main*.  
+
+---
+
+## 2. ¿Cuándo sigue siendo `master` y cuándo es `main`?
+
+### ➤ Al crear repositorios **localmente** (con `git init`)
+- La rama por defecto sigue siendo **`master`**.  
+- Para cambiarla a `main`, usamos:  
+  ```bash
+  git branch -M main
+  ```
+
+- Para que siempre usemos `main` por defecto en cualquier proyecto:  
+  ```bash
+  git config --global init.defaultBranch main
+  ```
+
+👉 A partir de ese momento, cada vez que uses `git init`, la rama inicial será `main`.  
+
+---
+
+### ➤ Al crear repositorios **desde GitHub (en la nube)**
+- GitHub ya establece automáticamente la rama principal como **`main`**.  
+- Al clonar un repositorio, se mantendrá con ese nombre.  
+- Por lo tanto, **no será necesario realizar ningún cambio**.  
+
+---
+
+## 3. Visualización de ramas con `gitk`
+
+El comando `gitk` permite visualizar de forma gráfica la historia de commits y ramas.  
+
+Si no funciona al ejecutarlo, probablemente no esté instalado por defecto.  
+
+### Instalación en Linux:
+```bash
+sudo apt-get update
+sudo apt-get install gitk
+```
+
+---
+
+## 📌 Resumen
+
+- **GitHub usa `main` por defecto desde 2020.**  
+- Si creamos repositorios localmente con `git init`, debemos configurar o renombrar `master` a `main`.  
+- Podemos automatizar el uso de `main` con:  
+  ```bash
+  git config --global init.defaultBranch main
+  ```  
+- `gitk` es una herramienta útil para visualizar el historial de Git, aunque requiere instalación adicional en algunos sistemas.  
+
+---
