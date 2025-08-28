@@ -2,6 +2,8 @@
 Para cada uno indicar si es par o impar.
 Primero lo haremos con la clase Scanner
 Luego con la clase JOptionPame*/
+
+// clase scanner
 package clase3ejercicioconciclos3;
 
 import java.util.Scanner;
