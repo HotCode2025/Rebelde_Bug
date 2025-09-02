@@ -9,22 +9,21 @@
 l1videojuegos = ['Call of duty', 'Resident Evil 4', 'Minecraft', 'The Last of Us', 'Mario Bros']
 l2animales = ['Leopardo', 'Carpincho', 'Guanaco', 'Minecraft', 'Anaconda', 'Pejerrey']
 
-# Convertir a conjuntos para operaciones sin repeticiones
+
 set1 = set(l1videojuegos)
 set2 = set(l2animales)
 
-# 1. Palabras que aparecen en ambas listas (unión)
 print('*** Lista de palabras que aparecen en ambas listas  ***')
 print(set1.union(set2))
 
-# 2. Palabras que están en la primera lista pero no en la segunda (diferencia)
+
 print('*** Solo palabras de la primera lista ***')
 print(set1.difference(set2))
 
-# 3. Palabras que están en la segunda lista pero no en la primera (diferencia)
+
 print('*** Solo palabras de la segunda lista ***')
 print(set2.difference(set1))
 
-# 4. Palabras que están en ambas listas (intersección)
+
 print('*** Palabras que aparecen en ambas listas ***')
 print(set1.intersection(set2))
