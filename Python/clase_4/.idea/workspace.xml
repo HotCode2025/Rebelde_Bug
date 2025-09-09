@@ -28,17 +28,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.4.4 Ejercicio 1 con Matemáticas y la clase math.executor&quot;: &quot;Run&quot;,
-    &quot;Python.5.1 Ejercicio 4 Sumar Números pares dentro de un rango.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;prueba&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/juliv/Documents/Repositorios/Rebelde_Bug/Python/clase_4&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.4.4 Ejercicio 1 con Matemáticas y la clase math.executor": "Run",
+    "Python.5.1 Ejercicio 4 Sumar Números pares dentro de un rango.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "prueba",
+    "last_opened_file_path": "C:/Users/juliv/Documents/Repositorios/Rebelde_Bug/Python/clase_4"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="5.1 Ejercicio 4 Sumar Números pares dentro de un rango" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="clase_4" />
@@ -79,5 +82,16 @@
       <updated>1756768228842</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
