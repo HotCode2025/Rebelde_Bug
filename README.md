@@ -15,6 +15,15 @@ En este repositorio iremos subiendo los ejercicios, proyectos y prácticas desar
 - Jimena Karin Pérez  
 
 ---
+---
+
+## 📑 Índice de clases
+
+- [Clase 1 - Uso de GitHub](#clase-1---uso-de-github)
+- [Clase 2 - Configuración de SSH y ramas en GitHub](#clase-2---configuración-de-ssh-y-ramas-en-github)
+- [Clase 3 - Cambios en GitHub: de master a main](#clase-3---cambios-en-github-de-master-a-main)
+- [Clase 04 - Tu primer push](#-clase-04)
+- [Clase 05 - Git tag y versiones en GitHub](#-clase-05)
 
 ## Objetivo 🚀
 Este repositorio será nuestro espacio de trabajo grupal donde subiremos las **actividades de las clases** para organizarnos mejor y mantener un registro del progreso de todos.  
@@ -349,3 +358,153 @@ sudo apt-get install gitk
 - `gitk` es una herramienta útil para visualizar el historial de Git, aunque requiere instalación adicional en algunos sistemas.  
 
 ---
+
+# 📚 Clase 04  
+
+## 🔹 Tu primer push  
+
+La creación de las **llaves SSH** es necesaria **solo una vez por cada computadora**.  
+Aquí aprenderás cómo conectar a GitHub usando SSH de forma segura, sin necesidad de escribir usuario y contraseña todo el tiempo.  
+
+---
+
+## 🔑 Configuración de SSH en GitHub  
+
+1. Crea tus llaves SSH en tu computadora.  
+2. Copia la **llave pública**.  
+3. Entra a **GitHub → Configuración → SSH and GPG Keys**.  
+4. Crea una nueva llave:  
+   - Asigna un **nombre descriptivo** (ej: *Mi Laptop*).  
+   - Pega el contenido de la llave pública.  
+
+Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, pero usando **SSH en vez de HTTPS**:  
+
+```bash
+git remote set-url origin url-ssh-del-repositorio-en-github
+```
+
+---
+
+## 📋 Comandos para copiar la llave SSH pública  
+
+- **Mac**:  
+  ```bash
+  pbcopy < ~/.ssh/id_rsa.pub
+  ```
+
+- **Windows (Git Bash)**:  
+  ```bash
+  clip < ~/.ssh/id_rsa.pub
+  ```
+
+- **Linux (Ubuntu)**:  
+  ```bash
+  cat ~/.ssh/id_rsa.pub
+  ```
+
+---
+
+## ⚠️ Importante  
+
+Las buenas prácticas nos enseñan que **antes de hacer un `push` siempre debemos hacer un `pull` o un `fetch`**,  
+para evitar conflictos en caso de que alguien ya haya hecho cambios en el repositorio.  
+
+---
+
+## 👥 Invitar a un colaborador  
+
+Para invitar a un colaborador en GitHub:  
+
+1. Ve al repositorio → **Settings**.  
+2. Selecciona **Collaborators**.  
+3. Ingresa tu contraseña o código de verificación **2FA**.  
+4. Envía la invitación escribiendo el **nombre de usuario** del colaborador.  
+
+👉 Del otro lado, el usuario solo debe **aceptar la invitación** y ya podrá participar en el proyecto haciendo commits.  
+
+---
+
+# 📚 Clase 05  
+
+## 🏷️ Git tag y versiones en GitHub  
+
+En Git, las **etiquetas (tags)** tienen un papel importante al asignar **versiones a los commits más significativos** de un proyecto.  
+
+Aprender a utilizar `git tag`, entender los diferentes tipos de etiquetas, cómo **crearlas, listarlas, eliminarlas y compartirlas**, es esencial para un flujo de trabajo eficiente.  
+
+---
+
+## ✨ Creación de etiquetas en Git  
+
+```bash
+git tag nombre-etiqueta
+```
+
+📌 Sustituye `nombre-etiqueta` con un identificador semántico que refleje el estado del repositorio en ese momento (ej: `v1.0.0`).  
+
+### Tipos de etiquetas:  
+- **Anotadas**: almacenan información adicional como fecha, usuario y correo. Son ideales para **releases públicas**.  
+- **Ligeras**: funcionan como marcadores simples de un commit.  
+
+---
+
+## 📋 Listar etiquetas existentes  
+
+```bash
+git tag
+```
+
+Ejemplo de salida:  
+
+```
+v1.0
+v1.1
+v1.2
+```
+
+También puedes filtrar etiquetas con expresiones comodín:  
+
+```bash
+git tag -l "v1.*"
+```
+
+---
+
+## 🔄 Compartir etiquetas en remoto  
+
+Por defecto, las etiquetas **no se envían automáticamente** a GitHub.  
+
+- Enviar una etiqueta específica:  
+  ```bash
+  git push origin nombre-etiqueta
+  ```
+
+- Enviar **todas las etiquetas** a la vez:  
+  ```bash
+  git push origin --tags
+  ```
+
+---
+
+## ❌ Eliminación de etiquetas  
+
+- Eliminar en **local**:  
+  ```bash
+  git tag -d nombre-etiqueta
+  ```
+
+- Eliminar en **remoto**:  
+  ```bash
+  git push origin --delete nombre-etiqueta
+  ```
+
+---
+
+## ✅ Resumen  
+
+Las etiquetas en Git son esenciales para:  
+- Asignar **versiones** al proyecto.  
+- Capturar **momentos importantes** en el historial.  
+- Facilitar un **flujo de trabajo ordenado** para releases y despliegues.  
+
+👉 Aprender a **crear, listar, compartir y eliminar** etiquetas mejora tu control sobre las versiones de tu proyecto.
