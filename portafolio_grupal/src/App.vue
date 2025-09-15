@@ -1,47 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import NavBar from './components/NavBar.vue'
+import DatosIntegrantes from './components/DatosIntegrantes.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <NavBar />
   </header>
 
   <main>
-    <TheWelcome />
+    <DatosIntegrantes />
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+:root{
+  --bg: #eef2f7;         /* fondo general */
+  --bg-2: #e9edf3;       /* degradado suave */
+  --text: #111827;       /* texto principal */
+  --muted: #6b7280;      /* texto secundario */
+  --card: #ffffff;       /* fondo tarjeta */
+  --primary: #618faa;    /* color marca */
+  --border: #e5e7eb;     /* bordes sutiles */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 20px rgba(0,0,0,.08);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+html, body, #app { height: 100%; }
+body{
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+:root { scroll-behavior: smooth; } /* anchors suaves */
 </style>
