@@ -1,4 +1,8 @@
+/* JOptionPane
+Ejercicio 10: Pedir 10 números y escribir la suma total
+Hacerlo con la Clase JOptionPane
 
+*/
 package clase6;
 
 import javax.swing.JOptionPane;

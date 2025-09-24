@@ -1,4 +1,8 @@
+/* Scanner
+Ejercicio 10: Pedir 10 números y escribir la suma total
+Hacerlo con la Clase Scanner
 
+*/
 package clase6;
 import java.util.Scanner;
 
