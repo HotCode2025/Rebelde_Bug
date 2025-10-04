@@ -1,38 +1,25 @@
+<!-- src/App.vue -->
 <script setup>
-import NavBar from './components/NavBar.vue'
-import DatosIntegrantes from './components/DatosIntegrantes.vue'
+import { ref } from "vue";
+import NavBar from "@/components/NavBar.vue";
+import Inicio from "@/components/Inicio.vue";
+import DatosIntegrantes from "@/components/DatosIntegrantes.vue";
+import Educacion from "@/components/Educacion.vue";
+
+const section = ref("inicio");
+function onChange(key) { section.value = key; }
 </script>
 
 <template>
-  <header>
-    <NavBar />
-  </header>
+  <NavBar :active="section" @change="onChange" />
 
   <main>
-    <DatosIntegrantes />
+    <Inicio v-if="section === 'inicio'" @change="onChange" />
+    <DatosIntegrantes v-else-if="section === 'integrantes'" />
+    <Educacion v-else-if="section === 'educacion'" />
   </main>
 </template>
 
-<style>
-:root{
-  --bg: #eef2f7;         /* fondo general */
-  --bg-2: #e9edf3;       /* degradado suave */
-  --text: #111827;       /* texto principal */
-  --muted: #6b7280;      /* texto secundario */
-  --card: #ffffff;       /* fondo tarjeta */
-  --primary: #618faa;    /* color marca */
-  --border: #e5e7eb;     /* bordes sutiles */
-  --shadow-sm: 0 4px 12px rgba(0,0,0,.06);
-  --shadow-md: 0 8px 20px rgba(0,0,0,.08);
-}
-
-html, body, #app { height: 100%; }
-body{
-  margin: 0;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg), var(--bg-2));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-:root { scroll-behavior: smooth; } /* anchors suaves */
+<style scoped>
+main{ background: #f7f9fb; min-height: calc(100vh - 56px); }
 </style>
