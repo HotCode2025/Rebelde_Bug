@@ -1,0 +1,22 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>28</y><w>294</w><h>196</h></coordinates><panel_attributes>FiguraGeometrica
+--
+alto
+ancho
+--
+get_ancho()
+set_ancho(ancho)
+get_alto()
+set_alto(alto)
+__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>28</y><w>294</w><h>126</h></coordinates><panel_attributes>Color
+--
+color
+--
+get_color()
+set_color(color)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>14</x><y>392</y><w>294</w><h>98</h></coordinates><panel_attributes>Rectangulo
+--
+area()
+__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>392</y><w>294</w><h>98</h></coordinates><panel_attributes>Cuadrado
+--
+area()
+__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>140</y><w>70</w><h>280</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>30;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>182</y><w>308</w><h>238</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;200;150</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>140</y><w>364</w><h>280</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>240;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>210</y><w>42</w><h>210</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element></diagram>
