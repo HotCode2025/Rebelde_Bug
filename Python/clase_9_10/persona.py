@@ -25,7 +25,7 @@ def __str__(self): # Override = sobreescribir
     return f"Persona: [ Nombre: {self._nombre}, Edad: {self._edad} ]"
 
 class Empleado(Persona): # Esta clase es hija de la clase Persona
-    def __init__(self,nombre,edad sueldo):
+    def __init__(self,nombre,edad, sueldo):
         super().__init__(nombre, edad)
         self.sueldo = sueldo
     

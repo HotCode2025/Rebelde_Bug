@@ -1,0 +1,1 @@
+mi_constante = "soy una constante"
