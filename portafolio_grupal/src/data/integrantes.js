@@ -1,113 +1,86 @@
-// src/data/integrantes.js
-// 👉 Editá este archivo en el repo para cambiar los datos.
-//    Cada integrante modifica SOLO su objeto.
+
+// Editá este archivo para actualizar los datos de cada integrante.
+
 export const integrantes = [
   {
     id: 1,
     nombre: "Camila Scheurer",
     rol: "Frontend",
-    bio: "Apasionada por UI accesibles y limpias. Fan de Vue 3 y Vite.",
-    skills: ["Vue", "Vite", "Tailwind", "Git"],
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/in/",
+    bio: "Apasionada por el diseño limpio, la accesibilidad y las interfaces intuitivas. Disfruta trabajar en equipo y aportar soluciones creativas.",
     email: "camila@ejemplo.com",
-    sitio: "",
-    avatar: "" // URL opcional (por ej. /img/camila.jpg o https://...)
+    telefono: "+54 9 261 555-0001",
+    avatar: "/img/camila.jpg" // o dejar vacío "" si aún no hay foto
   },
   {
     id: 2,
     nombre: "Zoé Geraldine Garnica",
     rol: "QA / Testing",
-    bio: "Automatización de pruebas y calidad del software.",
-    skills: ["Cypress", "Playwright", "Postman"],
-    github: "",
-    linkedin: "",
+    bio: "Le apasiona asegurar la calidad del software y mejorar la experiencia del usuario mediante pruebas efectivas y análisis detallado.",
     email: "zoe@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0002",
+    avatar: "/img/zoe.jpg"
   },
   {
     id: 3,
     nombre: "Maximiliano Foglia",
     rol: "Backend",
-    bio: "APIs escalables, seguridad y bases de datos.",
-    skills: ["Node.js", "Express", "MongoDB"],
-    github: "",
-    linkedin: "",
+    bio: "Enfocado en construir sistemas sólidos y escalables. Interesado en la seguridad, la eficiencia y la arquitectura de datos.",
     email: "maxi@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0003",
+    avatar: "/img/maxi.jpg"
   },
   {
     id: 4,
     nombre: "Rubén Marchisio",
-    rol: "Full‑stack",
-    bio: "Construyendo KiokoG y soluciones offline‑first.",
-    skills: ["Vue", "IndexedDB", "MongoDB", "PWA"],
-    github: "https://github.com/",
-    linkedin: "",
+    rol: "Full-stack",
+    bio: "Desarrollador integral apasionado por crear soluciones prácticas. Fundador de KiokoG, con experiencia en PWA y entornos offline-first.",
     email: "ruben@ejemplo.com",
-    sitio: "https://www.kiokog.com",
-    avatar: ""
+    telefono: "+54 9 261 555-0004",
+    avatar: "/img/foto-ruben.jpeg"
   },
   {
     id: 5,
     nombre: "José Cueva",
     rol: "Infra / DevOps",
-    bio: "Deploys confiables y monitoreo.",
-    skills: ["Docker", "CI/CD", "Render"],
-    github: "",
-    linkedin: "",
+    bio: "Responsable de la infraestructura, despliegues y monitoreo. Le gusta optimizar procesos y mantener entornos estables.",
     email: "jose@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0005",
+    avatar: "/img/jose.jpg"
   },
   {
     id: 6,
     nombre: "Melina Denise Gallo",
     rol: "UX Research",
-    bio: "Entrevistas y pruebas con usuarios para priorizar features.",
-    skills: ["User Research", "Prototipado", "Figma"],
-    github: "",
-    linkedin: "",
+    bio: "Investiga y analiza la interacción de los usuarios para mejorar cada etapa del desarrollo. Fomenta el diseño centrado en las personas.",
     email: "melina@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0006",
+    avatar: "/img/melina.jpg"
   },
   {
     id: 7,
     nombre: "Aramayo Micaela Cynthia",
     rol: "Data / Analytics",
-    bio: "Métricas, dashboards y decisiones basadas en datos.",
-    skills: ["SQL", "Python", "Metabase"],
-    github: "",
-    linkedin: "",
+    bio: "Apasionada por el análisis de datos y la toma de decisiones basadas en evidencia. Disfruta crear dashboards claros y útiles.",
     email: "mica@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0007",
+    avatar: "/img/mica.jpg"
   },
   {
     id: 8,
     nombre: "Ivana Daniela Molina",
     rol: "Documentación",
-    bio: "Readmes claros y mantenibles.",
-    skills: ["Markdown", "Confluence", "Git"],
-    github: "",
-    linkedin: "",
+    bio: "Encargada de mantener la documentación clara y actualizada. Valora la comunicación efectiva dentro del equipo.",
     email: "ivana@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0008",
+    avatar: "/img/ivana.jpg"
   },
   {
     id: 9,
     nombre: "Jimena Karin Pérez",
     rol: "Soporte / Atención",
-    bio: "Ayuda al usuario final y feedback al equipo.",
-    skills: ["Soporte", "Comunicación", "Help Desk"],
-    github: "",
-    linkedin: "",
+    bio: "Apoya al usuario final y recopila feedback para mejorar los proyectos. Destaca por su empatía y capacidad de comunicación.",
     email: "jimena@ejemplo.com",
-    sitio: "",
-    avatar: ""
+    telefono: "+54 9 261 555-0009",
+    avatar: "/img/jimena.jpg"
   }
 ];

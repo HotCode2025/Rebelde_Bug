@@ -10,6 +10,7 @@ const items = [
   { key: "inicio", label: "Inicio" },
   { key: "integrantes", label: "Integrantes" },
   { key: "educacion", label: "Educación" },
+  { key: "experiencia", label: "Experiencia" },
 ];
 
 function go(key) { emit("change", key); }

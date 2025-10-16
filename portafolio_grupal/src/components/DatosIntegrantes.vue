@@ -1,56 +1,44 @@
-<!-- src/components/DatosIntegrantes.vue -->
 <script setup>
-import { computed } from "vue";
-import { integrantes as RAW } from "@/data/integrantes.js";
+import { integrantes } from '@/data/integrantes.js'
 
-const integrantes = computed(() =>
-  [...RAW].sort((a, b) => a.nombre.localeCompare(b.nombre))
-);
-
-function initials(name) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase())
-    .join("");
-}
+const placeHolderAvatar = 'https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/user.svg'
+// Si preferís un placeholder local, podés poner: '/img/placeholder-user.png'
 </script>
 
 <template>
-  <section class="integrantes">
+  <section id="integrantes" class="wrap">
     <header class="encabezado">
       <h2>Integrantes</h2>
-      <p class="sub">Conocé al equipo y sus habilidades.</p>
+      <p class="sub">Conocé al equipo de <strong>Rebelde_Bug</strong></p>
     </header>
 
     <div class="grid">
-      <article v-for="m in integrantes" :key="m.id" class="card">
-        <div class="header">
-          <div class="avatar" :title="m.nombre">
-            <img v-if="m.avatar" :src="m.avatar" alt="Avatar" />
-            <span v-else>{{ initials(m.nombre) }}</span>
-          </div>
-
-          <div class="titles">
-            <h3 class="name">{{ m.nombre }}</h3>
-            <a v-if="m.rol" class="role" href="javascript:void(0)">{{ m.rol }}</a>
-            <span v-else class="role muted">Rol no especificado</span>
-          </div>
+      <article
+        v-for="p in integrantes"
+        :key="p.id"
+        class="card"
+      >
+        <div class="foto">
+          <img
+            :src="p.avatar && p.avatar.trim() !== '' ? p.avatar : placeHolderAvatar"
+            :alt="`Foto de ${p.nombre}`"
+            loading="lazy"
+          />
         </div>
 
-        <p class="bio" v-if="m.bio">{{ m.bio }}</p>
-        <p class="bio muted" v-else>Sin bio todavía.</p>
+        <div class="contenido">
+          <h3 class="nombre">{{ p.nombre }}</h3>
+          <p class="rol">{{ p.rol }}</p>
+          <p class="bio">{{ p.bio }}</p>
 
-        <ul v-if="m.skills?.length" class="skills">
-          <li v-for="s in m.skills" :key="s" class="chip">{{ s }}</li>
-        </ul>
-
-        <div class="links">
-          <a v-if="m.github" :href="m.github" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
-          <a v-if="m.linkedin" :href="m.linkedin" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
-          <a v-if="m.sitio" :href="m.sitio" target="_blank" rel="noopener" class="btn ghost">Sitio</a>
-          <a v-if="m.email" :href="`mailto:${m.email}`" class="btn">Email</a>
+          <div class="contacto">
+            <a v-if="p.email" class="link" :href="`mailto:${p.email}`" title="Enviar correo">
+              📧 {{ p.email }}
+            </a>
+            <a v-if="p.telefono" class="link" :href="`tel:${p.telefono.replace(/\\s|\\(|\\)|-/g,'')}`" title="Llamar">
+              📞 {{ p.telefono }}
+            </a>
+          </div>
         </div>
       </article>
     </div>
@@ -58,95 +46,109 @@ function initials(name) {
 </template>
 
 <style scoped>
-.integrantes{
-  padding: 36px 22px 56px;
-  max-width: 1200px;
-  margin-inline: auto;
+/* Sección */
+.wrap {
+  padding: 3rem 1.25rem;
+  background: #ffffff;           /* Fondo claro */
+  color: #333;
 }
-.encabezado{
-  text-align:center; margin-bottom: 22px;
+.encabezado {
+  text-align: center;
+  margin-bottom: 2rem;
 }
-.encabezado h2{
-  margin:0;
-  font-size: clamp(1.6rem, 2.4vw, 2rem);
+.encabezado h2 {
+  font-size: 2rem;
+  margin-bottom: .25rem;
+  color: #1f2937;
 }
-.sub{ color:#6b7280; margin:4px 0 0; }
-
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-@media (max-width: 980px){ .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-@media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
-
-.card{
-  background:#ffffff;
-  border:1px solid rgba(0,0,0,.06);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 10px 24px rgba(15,23,42,.06);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.card:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(15,23,42,.10);
-  border-color: rgba(0,0,0,.10);
+.sub {
+  color: #6b7280;
+  font-size: 1rem;
 }
 
-.header{
-  display:flex; align-items:center; gap:12px; margin-bottom: 8px;
+/* Grid responsivo */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.avatar{
-  width: 54px; height: 54px; border-radius: 50%;
-  display:grid; place-items:center; overflow:hidden; position:relative;
-  background: #f1f5f9; color:#0f172a; font-weight:800; letter-spacing:.4px;
+/* Tarjeta */
+.card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: #f8fafc;          /* Muy claro, contrasta con el fondo */
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s;
 }
-.avatar::after{
-  /* anillo degradado suave */
-  content:""; position:absolute; inset:-2px; border-radius:50%;
-  background: conic-gradient(from 180deg, #60a5fa, #a78bfa, #34d399, #60a5fa);
-  z-index:-1; filter: blur(6px); opacity:.35;
-}
-.avatar img{ width:100%; height:100%; object-fit:cover; }
-
-.name{ margin:0; font-size:1.05rem; }
-.role{
-  display:inline-block; margin-top:4px;
-  color:#2563eb; text-decoration:none; font-weight:600;
-  transition: color .15s ease;
-}
-.role:hover{ color:#1d4ed8; }
-.muted{ color:#9ca3af; font-weight:500; }
-
-.bio{ margin: 8px 0 0; color:#334155; }
-
-.skills{
-  margin: 10px 0 0; padding:0; list-style:none;
-  display:flex; flex-wrap:wrap; gap:8px;
-}
-.chip{
-  font-size:.85rem; padding:6px 10px; border-radius: 999px;
-  background: #f1f5f9;
-  border:1px dashed #e2e8f0;
-  color:#0f172a;
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+  border-color: #d1d5db;
 }
 
-.links{
-  display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;
+/* Foto */
+.foto {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e5e7eb;
+  display: flex; align-items: center; justify-content: center;
 }
-.btn{
-  appearance:none; cursor:pointer; text-decoration:none;
-  border-radius: 10px; padding:8px 12px; font-size:.95rem;
-  background:#111827; color:#fff; border:1px solid #111827;
-  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+.foto img {
+  width: 100%; height: 100%; object-fit: cover;
 }
-.btn:hover{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(17,24,39,.15); }
-.btn.ghost{
-  background:#fff; color:#0f172a; border:1px solid #e5e7eb;
+
+/* Contenido */
+.contenido { min-width: 0; }
+.nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
 }
-.btn.ghost:hover{
-  background:#f8fafc;
+.rol {
+  color: #2563eb;               /* Azul sobrio */
+  font-weight: 600;
+  margin: .15rem 0 .5rem;
+}
+.bio {
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: .75rem;
+}
+
+/* Contacto */
+.contacto {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.link {
+  display: inline-flex;
+  gap: .4rem;
+  align-items: center;
+  padding: .5rem .7rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #374151;
+  background: #fff;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.link:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111827;
 }
 </style>

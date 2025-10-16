@@ -1,111 +1,93 @@
-<!-- src/components/Inicio.vue -->
 <script setup>
-import { defineEmits } from "vue";
-const emit = defineEmits(["change"]);
-function go(key){ emit("change", key); }
+// Nada de lógica, solo presentación
 </script>
 
 <template>
-  <section class="hero">
-    <div class="content">
-      <h1>Portafolio Grupal</h1>
-      <p class="lead">
-        Proyecto del equipo UTN: integrando <strong>personas</strong>, <strong>habilidades</strong> y <strong>formación</strong> en un mismo sitio.
+  <section class="inicio">
+    <div class="contenido">
+      <h1 class="titulo">
+        Somos el grupo <span class="resaltado">Rebelde_Bug</span>
+      </h1>
+
+      <p class="descripcion">
+        Estudiantes de la <strong>Universidad Tecnológica Nacional (UTN)</strong>, apasionados por la programación,
+        el aprendizaje constante y el trabajo colaborativo.
       </p>
 
-      <div class="actions">
-        <button class="btn primary" @click="go('integrantes')">Ver Integrantes</button>
-        <button class="btn ghost" @click="go('educacion')">Ver Educación</button>
-      </div>
+      <p class="descripcion">
+        Nos motiva crear proyectos que nos reten, aprender nuevas tecnologías y mejorar como equipo en cada práctica.
+        Creemos que la mejor forma de crecer es compartiendo conocimientos y experiencias.
+      </p>
 
-      <div class="highlights">
-        <div class="item">
-          <div class="num">9</div>
-          <div class="txt">Integrantes</div>
-        </div>
-        <div class="item">
-          <div class="num">+30</div>
-          <div class="txt">Skills</div>
-        </div>
-        <div class="item">
-          <div class="num">∞</div>
-          <div class="txt">Aprendizaje</div>
-        </div>
-      </div>
+      <a href="#integrantes" class="boton">Conocé al equipo</a>
     </div>
 
-    <div class="art">
-      <!-- simple decorative block -->
-      <div class="blob a"></div>
-      <div class="blob b"></div>
-      <div class="card">
-        <h3>¿Qué vas a encontrar?</h3>
-        <ul>
-          <li>Tarjetas con bio, links y skills</li>
-          <li>Formación y certificaciones por persona</li>
-          <li>Estructura simple, todo desde el <code>repo</code></li>
-        </ul>
-      </div>
+    <div class="decoracion">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Icono grupo" />
     </div>
   </section>
 </template>
 
 <style scoped>
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 24px;
-  min-height: calc(100vh - 72px);
-  padding: 36px 22px 56px;
-  max-width: 1200px;
-  margin-inline: auto;
-}
-@media (max-width: 980px){
-  .hero { grid-template-columns: 1fr; align-items: center; }
-  .art { order: -1; }
+.inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 90vh;
+  padding: 2rem;
+  background-color: #f9fafb; /* Fondo claro */
+  color: #333;
 }
 
-.content h1{
-  margin: 0 0 8px;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.05;
-}
-.lead{
-  color: #4b5563;
-  margin: 0 0 16px;
-  max-width: 52ch;
+.contenido {
+  max-width: 800px;
+  padding: 1.5rem;
 }
 
-.actions{ display: flex; gap: 10px; margin: 14px 0 28px; }
-.btn{
-  appearance: none; border-radius: 12px; padding: 12px 16px; cursor: pointer;
-  font-size: 1rem; border: 1px solid rgba(0,0,0,.12); background: #fff;
+.titulo {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
 }
-.btn.primary{ background: #111827; color: #fff; border-color: #111827; }
-.btn.ghost{ background: #fff; }
 
-.highlights{
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 520px;
+.resaltado {
+  color: #0077cc;
 }
-.highlights .item{
-  background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 14px;
-  padding: 14px; text-align: center; box-shadow: 0 10px 24px rgba(0,0,0,.04);
-}
-.num{ font-size: 1.6rem; font-weight: 800; }
-.txt{ color:#6b7280; }
 
-.art { position: relative; min-height: 300px; display: grid; place-items: center; }
-.blob{
-  position: absolute; width: 280px; height: 280px; border-radius: 50%;
-  filter: blur(40px); opacity: .45;
+.descripcion {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
 }
-.blob.a{ background: #60a5fa; top: 10%; left: 10%; }
-.blob.b{ background: #34d399; bottom: 8%; right: 6%; }
 
-.card{
-  position: relative; background: #fff; border-radius: 16px; border:1px solid rgba(0,0,0,.08);
-  padding: 18px; width: min(420px, 92%); box-shadow: 0 16px 40px rgba(0,0,0,.08);
+.boton {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.card h3{ margin: 0 0 10px; }
-.card ul{ margin: 0; padding-left: 18px; color: #374151; }
+
+.boton:hover {
+  background-color: #005fa3;
+  transform: scale(1.03);
+}
+
+.decoracion {
+  margin-top: 2rem;
+}
+
+.decoracion img {
+  width: 100px;
+  opacity: 0.8;
+}
 </style>

@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar.vue";
 import Inicio from "@/components/Inicio.vue";
 import DatosIntegrantes from "@/components/DatosIntegrantes.vue";
 import Educacion from "@/components/Educacion.vue";
+import Experiencia from "@/components/Experiencia.vue";
 
 const section = ref("inicio");
 function onChange(key) { section.value = key; }
@@ -17,6 +18,7 @@ function onChange(key) { section.value = key; }
     <Inicio v-if="section === 'inicio'" @change="onChange" />
     <DatosIntegrantes v-else-if="section === 'integrantes'" />
     <Educacion v-else-if="section === 'educacion'" />
+    <Experiencia v-else-if="section === 'experiencia'" />
   </main>
 </template>
 
