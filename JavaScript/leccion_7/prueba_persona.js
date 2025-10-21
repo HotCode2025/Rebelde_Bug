@@ -4,6 +4,7 @@ clase 9
 9.6 Prueba Clase Persona
 9.7 Prueba Clase Empleado
 9.8 Prueba Clase Cliente
+
 */
 class persona {
   static contadorPersonas = 0;
