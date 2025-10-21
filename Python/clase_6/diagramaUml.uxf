@@ -1,0 +1,19 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>
+</help_text><element><id>UMLClass</id><coordinates><x>40</x><y>40</y><w>210</w><h>120</h></coordinates><panel_attributes>Persona
+----------
+- nombre : str
+- apellido : str
+- edad : int
+----------
++ __init__(nombre, apellido, edad)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>220</y><w>140</w><h>90</h></coordinates><panel_attributes>persona1 : Persona
+----------
+nombre = "Liliana"
+apellido = "Buccella"
+edad = 40
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>220</y><w>140</w><h>90</h></coordinates><panel_attributes>persona2 : Persona
+----------
+nombre = "Osvaldo"
+apellido = "Giordanini"
+edad = 45
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>160</y><w>50</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;30;10</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>160</y><w>50</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;40;10;10</additional_attributes></element></diagram>
