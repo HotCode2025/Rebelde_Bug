@@ -43,6 +43,9 @@ persona1.nombre = 'Juan Pedro' #Llamamos el metodo setter
 print(persona1.nombre) # metodo getter
 print(persona1.mostrar_detalles()) #Llamamos al metodo mostrar detalles
 
+def __del__(self):
+    print(f'Persona2: {self._nombre} {self._apeliido}{self._edad}')
+
 #Tarea
 # Creación de 4 objetos nuevos
 persona1 = Persona2("Melina", "Gallo", 30)
