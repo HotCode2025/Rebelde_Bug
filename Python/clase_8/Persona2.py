@@ -42,3 +42,33 @@ def edad(self, edad):
 persona1.nombre = 'Juan Pedro' #Llamamos el metodo setter
 print(persona1.nombre) # metodo getter
 print(persona1.mostrar_detalles()) #Llamamos al metodo mostrar detalles
+
+#Tarea
+# Creación de 4 objetos nuevos
+persona1 = Persona2("Melina", "Gallo", 30)
+persona2 = Persona2("Carlos", "Lopez", 28)
+persona3 = Persona2("Julieta", "Fernandez", 35)
+persona4 = Persona2("Mateo", "Sanchez", 22)
+
+# Mostrar detalles de cada objeto
+print("Detalles de las personas creadas")
+persona1.mostrar_detalles()
+persona2.mostrar_detalles()
+persona3.mostrar_detalles()
+persona4.mostrar_detalles()
+
+# Modificar algunos datos con los setters
+print("Modificando algunos datos")
+persona1.nombre = "Melina Denise"
+persona2.edad = 29
+persona3.apellido = "Fernandez Vega"
+persona4.nombre = "Mateo Ariel"
+
+# Mostrar detalles nuevamente
+print("Detalles actualizados")
+persona1.mostrar_detalles()
+persona2.mostrar_detalles()
+persona3.mostrar_detalles()
+persona4.mostrar_detalles()
+
+print(__name__)

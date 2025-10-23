@@ -1,4 +1,6 @@
-from 10.1_MetodosSetterAndGetter_ClassPersona2 import class 10.1_MetodosSetterAndGetter_ClassPersona2
+from Persona2 import Persona2
 
+persona5 = Persona2('Lionel', 'Messi', 35)
+persona5.mostrar_detalles()
 
-
+print(__name__)
