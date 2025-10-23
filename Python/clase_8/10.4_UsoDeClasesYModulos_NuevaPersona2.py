@@ -1,0 +1,4 @@
+from 10.1_MetodosSetterAndGetter_ClassPersona2 import class 10.1_MetodosSetterAndGetter_ClassPersona2
+
+
+
