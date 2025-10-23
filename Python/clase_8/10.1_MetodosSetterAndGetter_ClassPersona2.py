@@ -16,8 +16,8 @@ class Persona2:
         print('Estamos utilizando el método setter')
         self._nombre = nombre
 
-Persona1 = Persona2('Ariel', 'Betancud', '42')
-print(Persona1.nombre) #Llamamos al método getter
+persona1 = Persona2('Ariel', 'Betancud', '42')
+print(persona1.nombre) #Llamamos al método getter
 
 # Tarea método set y get con apellido y edAD
 
@@ -39,3 +39,6 @@ def edad(self):
 def edad(self, edad):
     print('Estamos utilizando el método SETTER de edad')
     self._edad = edad
+persona1.nombre = 'Juan Pedro' #Llamamos el metodo setter
+print(persona1.nombre) # metodo getter
+print(persona1.mostrar_detalles()) #Llamamos al metodo mostrar detalles
