@@ -1,3 +1,5 @@
+# 14.6 Ejercicio Contador 
+# 14.7 Mejoras en el ejercicio Contador
 class Persona:
     contador_personas = 0  # variable de clase
 
