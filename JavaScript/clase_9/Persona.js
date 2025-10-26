@@ -1,3 +1,4 @@
+// 9.2 Creacion de la clase Persona
 class Persona {
     static contadorPersonas = 0;
     constructor(nombre, apellido, edad){
