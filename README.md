@@ -738,3 +738,208 @@ Dominar el manejo de ramas es clave para:
 
 ---
 
+# 👥 Clase 09 — Configurar múltiples colaboradores en un repositorio de GitHub
+
+Trabajar de forma colaborativa en GitHub requiere permisos y configuraciones adecuadas.  
+Aunque cualquier persona puede **clonar o descargar** un repositorio público, **no podrán crear commits ni ramas** a menos que se les otorgue acceso.
+
+Si el repositorio es **privado**, solo podrán verlo y colaborar **si reciben una invitación** del dueño.
+
+---
+
+## ✅ ¿Por qué agregar colaboradores?
+
+Permite que otros puedan:
+
+- Subir commits
+- Crear ramas
+- Trabajar con pull requests
+- Participar en el desarrollo del proyecto
+
+---
+
+## 🔧 Cómo agregar colaboradores en GitHub
+
+Ruta:
+
+```
+Repositorio > Settings > Collaborators
+```
+
+Luego:
+
+1. Ingresa el **email** o **username** del colaborador
+2. Envía la invitación
+3. Espera que el colaborador la acepte
+
+---
+
+## ✏️ Corregir mensaje de último commit (amend)
+
+Si escribiste mal un mensaje de commit:
+
+```sh
+git commit --amend
+git pull origin main
+git push --set-upstream origin main
+```
+
+`--amend` permite modificar el mensaje del **último commit**.
+
+---
+
+## 🚀 Comienzo del colaborador
+
+Pasos básicos:
+
+```sh
+cd Documentos           # Abrir ubicación
+mkdir class-git         # Crear carpeta de trabajo
+ls -al                  # Ver archivos y directorios
+```
+
+### ❌ Importante:
+✅ El colaborador **NO** debe usar `git init`.
+
+Debe:
+
+✔ Buscar el repositorio en GitHub  
+✔ Clonarlo usando HTTPS
+
+### Clonar repositorio
+
+```sh
+git clone url-copiada-github
+```
+
+> Si el repositorio es **público**, no pedirá usuario ni contraseña.
+
+---
+
+## 🧠 Editar archivos y realizar commits
+
+Abrir el proyecto:
+
+```sh
+code .
+```
+
+O editar directamente:
+
+```sh
+vim historia.txt
+```
+
+Escribir dentro:
+
+```
+Aquí está un nuevo colaborador
+```
+
+Guardar en Linux (Vim):
+
+```
+ctrl + x
+s
+enter
+```
+
+Guardar en Windows (Git Bash):
+
+```
+esc
+:wq!
+```
+
+---
+
+## 📌 Comandos esenciales del colaborador
+
+```sh
+git status
+git commit -am "Mi primer commit, estoy muy emocionado!!!"
+git pull origin main
+git fetch
+git branch
+git log
+git log --graph
+git push origin main
+```
+
+---
+
+## ❌ Error: Acceso denegado
+
+Esto sucede cuando:
+
+- El dueño no agregó al colaborador
+- El colaborador no aceptó la invitación
+
+### Solución:
+
+1. El dueño va a `Settings > Collaborators`
+2. Agrega al usuario o email
+3. El colaborador acepta la invitación por GitHub o email
+
+---
+
+## ✅ Después de aceptar invitación
+
+Intentar nuevamente:
+
+```sh
+git pull origin main
+git push origin main
+```
+
+Ingresar:
+
+- Nombre de usuario
+- Contraseña/token
+
+---
+
+## 👀 El dueño del repositorio no ve los cambios
+
+Debe actualizar:
+
+```sh
+git pull origin main
+git fetch
+git log --stat
+```
+
+Ahí podrá ver el commit del colaborador.
+
+---
+
+## 🔀 Trabajo colaborativo profesional
+
+A partir de este punto se recomienda:
+
+- Crear ramas por funcionalidad
+- Ejemplo:
+
+| Responsable | Rama |
+|------------|-------|
+| Dueño      | header |
+| Colaborador| footer |
+
+### Al finalizar:
+Se realiza un **merge** al finalizar las tareas.
+
+---
+
+## 🧠 Recuerda
+
+Git es como una base de datos del historial completo del proyecto:
+- Quién cambió qué
+- Cuándo
+- Cómo evolucionó el código
+
+Aprender colaboración es esencial para trabajar profesionalmente.
+
+---
+
+✍️ *Autor:* Rubén Marchisio
+📅 *Clase 09 — Colaboradores en GitHub*
