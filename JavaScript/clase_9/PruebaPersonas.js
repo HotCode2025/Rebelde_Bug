@@ -117,3 +117,10 @@ console.log(empleado1.toString());
 
 let empleado2 = new Empleado('María', 'Rodríguez', 25, 60000);
 console.log(empleado2.toString());
+
+// 9.8 Prueba clase Cliente
+let cliente1 = new Cliente('Luis', 'Martínez', 40, new Date('2022-01-15'));
+console.log(cliente1.toString());
+
+let cliente2 = new Cliente('Sofía', 'Hernández', 29, new Date('2023-03-22'));
+console.log(cliente2.toString());
