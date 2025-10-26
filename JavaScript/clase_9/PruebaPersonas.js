@@ -103,3 +103,10 @@ class Cliente extends Persona{
                 Fecha de Registro: ${this._fechaRegistro}`;
     }
 }
+
+// 9.6 Prueba clase Persona
+let persona1 = new Persona('Juan', 'Pérez', 28);
+console.log(persona1.toString());
+
+let persona2 = new Persona('Ana', 'Gómez', 34);
+console.log(persona2.toString());
