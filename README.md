@@ -606,3 +606,135 @@ git push origin v1.0              # Subir tag correcto
 ```
 
 ---
+
+# 📚 Clase 08 — Manejo de Ramas en GitHub
+
+El manejo de ramas es fundamental para trabajar de manera profesional con Git y GitHub.  
+Las ramas permiten realizar cambios sin modificar la versión principal (`main`), trabajar en paralelo y mantener un flujo de trabajo ordenado.
+
+---
+
+## 🖥️ Recordatorio: `gitk`
+
+`gitk` es una herramienta gráfica que permite visualizar:
+
+- El historial de commits
+- El flujo entre ramas
+- Operaciones de merge
+- Estructura del repositorio
+
+> Si `gitk` no funciona, es probable que no esté instalado por defecto.
+
+### ✅ Instalación de `gitk` en Linux (Debian/Ubuntu)
+
+Ejecutar los siguientes comandos en la terminal:
+
+```sh
+sudo apt-get update
+sudo apt-get install gitk
+```
+
+---
+
+## 🤔 Repaso rápido: ¿Qué es Git?
+
+Git es un *sistema de control de versiones* que permite:
+
+- Guardar cambios de archivos de forma segura
+- Registrar histórico de versiones
+- Colaborar con varias personas en un mismo proyecto
+- Trabajar en paralelo gracias a las **ramas**
+
+---
+
+## 🌿 ¿Por qué usar ramas?
+
+Las ramas permiten:
+
+- Probar nuevas ideas sin romper el código principal
+- Trabajar en nuevas funcionalidades
+- Corregir bugs en paralelo
+- Mantener seguro el entorno `main`
+
+> Puedes tener ramas locales que **no se suben** a GitHub.  
+> También puedes tener ramas remotas que **no existen** en tu entorno local.
+
+---
+
+## 🔀 Efecto de ramas en historial y archivos
+
+Cuando estás en una rama y realizas cambios:
+
+- Los commits quedan guardados **solo en esa rama**
+- El historial (`git log`) será diferente entre ramas
+
+Si luego cambias de rama:
+
+```sh
+git checkout otraRama
+```
+
+Verás que los cambios **no aparecen** en la otra rama.
+
+👉 ¡Esto es precisamente el poder de trabajar con ramas!
+
+---
+
+## 🛠️ Comandos para manejar ramas
+
+### ✅ Crear una rama
+
+```sh
+git branch branchName
+```
+
+### ✅ Crear y moverte a una rama al mismo tiempo
+
+```sh
+git checkout -b branchName
+```
+
+### ✅ Cambiar de rama
+
+```sh
+git checkout branchName
+```
+
+### ✅ Publicar una rama local en el repositorio remoto
+
+```sh
+git push origin branchName
+```
+
+---
+
+## 👁️ Visualizar flujo de trabajo con `gitk`
+
+Para abrir la vista gráfica:
+
+```sh
+gitk
+```
+
+`gitk` fue el primer visor gráfico creado para Git y continúa siendo una herramienta muy útil para:
+
+✅ Comprender la estructura de ramas  
+✅ Analizar merges  
+✅ Inspeccionar commits  
+✅ Ver el progreso del proyecto de forma ordenada
+
+---
+
+## 🎯 Conclusión
+
+Dominar el manejo de ramas es clave para:
+
+- Trabajar colaborativamente
+- Mantener código limpio
+- Evitar conflictos
+- Mejorar productividad
+
+¡Practica creando y cambiando ramas para afianzar el concepto!
+
+---
+
