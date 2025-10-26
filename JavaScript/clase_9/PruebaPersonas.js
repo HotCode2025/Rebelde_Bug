@@ -110,3 +110,10 @@ console.log(persona1.toString());
 
 let persona2 = new Persona('Ana', 'Gómez', 34);
 console.log(persona2.toString());
+
+// 9.7 Prueba clase Empleado
+let empleado1 = new Empleado('Carlos', 'López', 30, 50000);
+console.log(empleado1.toString());
+
+let empleado2 = new Empleado('María', 'Rodríguez', 25, 60000);
+console.log(empleado2.toString());
