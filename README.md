@@ -508,3 +508,438 @@ Las etiquetas en Git son esenciales para:
 - Facilitar un **flujo de trabajo ordenado** para releases y despliegues.  
 
 👉 Aprender a **crear, listar, compartir y eliminar** etiquetas mejora tu control sobre las versiones de tu proyecto.
+
+# 📚 Clase 06 y 07
+
+# Error de duplicado de tags en Git
+
+## ¿Un tag se puede generar dos veces?
+👉 **No.**  
+En el repositorio local, Git no te deja crear dos veces el mismo nombre de *tag*.  
+Si intentás, te da error:
+
+```
+fatal: tag 'v1.0' already exists
+```
+
+---
+
+## ¿Por qué aparece el error de “dos tags con el mismo nombre”?
+
+El problema no está en la PC, sino cuando hay **dos definiciones diferentes del mismo tag en contextos distintos**:
+
+### Local vs. remoto
+- En tu PC tenés `v1.0` apuntando a un commit.  
+- En el remoto (GitHub, GitLab) alguien creó también `v1.0` pero apuntando a otro commit.  
+- Cuando hacés `git push --tags`, Git detecta el choque y dice: “hay dos tags distintos con el mismo nombre”.
+
+### Entre distintas personas del equipo
+- Cada uno pudo haber creado un tag con el mismo nombre pero sobre commits diferentes.  
+- Al subirlos al mismo remoto, se genera la colisión.
+
+### Tipos distintos de tag
+- Uno pudo ser **ligero** y otro **anotado**, ambos con el mismo nombre.  
+- Aunque se llamen igual, Git los trata como objetos diferentes.
+
+---
+
+## Ejemplo paso a paso en consola
+
+### 👤 En PC 1
+```bash
+# Hacés un commit
+git commit -m "Mi versión estable"
+
+# Creás el tag v1.0
+git tag v1.0
+
+# Subís el tag al remoto
+git push origin v1.0
+```
+
+👉 Ahora en GitHub existe `v1.0` apuntando a tu commit.
+
+---
+
+### 👤 En PC 2
+```bash
+# Hace otro commit distinto
+git commit -m "Otra versión estable"
+
+# También crea un tag con el mismo nombre
+git tag v1.0
+
+# Intenta subirlo
+git push origin v1.0
+```
+
+👉 Git responde:
+```
+! [rejected]        v1.0 -> v1.0 (already exists)
+error: failed to push some refs to 'github.com:repo.git'
+```
+
+---
+
+## ⚠️ ¿Qué pasó?
+- En local de PC 2: `v1.0` apunta a su commit.  
+- En remoto: `v1.0` ya existe, apuntando al commit de PC 1.  
+- Git detecta que son dos tags diferentes con el mismo nombre → **conflicto**.
+
+---
+
+## ✅ Solución
+PC 2 debe borrar el tag local y recrearlo, o bien coordinar con el equipo qué commit debe llevar el nombre `v1.0`.
+
+### Ejemplo para borrar y recrear:
+```bash
+git tag -d v1.0              # Borrar tag local
+git fetch origin --tags      # Traer el correcto del remoto
+```
+
+### Si el tag remoto estaba mal y hay que corregirlo:
+```bash
+git tag -d v1.0
+git tag v1.0 <commit_correcto>
+git push origin :refs/tags/v1.0   # Borrar en remoto
+git push origin v1.0              # Subir tag correcto
+```
+
+---
+
+# 📚 Clase 08 — Manejo de Ramas en GitHub
+
+El manejo de ramas es fundamental para trabajar de manera profesional con Git y GitHub.  
+Las ramas permiten realizar cambios sin modificar la versión principal (`main`), trabajar en paralelo y mantener un flujo de trabajo ordenado.
+
+---
+
+## 🖥️ Recordatorio: `gitk`
+
+`gitk` es una herramienta gráfica que permite visualizar:
+
+- El historial de commits
+- El flujo entre ramas
+- Operaciones de merge
+- Estructura del repositorio
+
+> Si `gitk` no funciona, es probable que no esté instalado por defecto.
+
+### ✅ Instalación de `gitk` en Linux (Debian/Ubuntu)
+
+Ejecutar los siguientes comandos en la terminal:
+
+```sh
+sudo apt-get update
+sudo apt-get install gitk
+```
+
+---
+
+## 🤔 Repaso rápido: ¿Qué es Git?
+
+Git es un *sistema de control de versiones* que permite:
+
+- Guardar cambios de archivos de forma segura
+- Registrar histórico de versiones
+- Colaborar con varias personas en un mismo proyecto
+- Trabajar en paralelo gracias a las **ramas**
+
+---
+
+## 🌿 ¿Por qué usar ramas?
+
+Las ramas permiten:
+
+- Probar nuevas ideas sin romper el código principal
+- Trabajar en nuevas funcionalidades
+- Corregir bugs en paralelo
+- Mantener seguro el entorno `main`
+
+> Puedes tener ramas locales que **no se suben** a GitHub.  
+> También puedes tener ramas remotas que **no existen** en tu entorno local.
+
+---
+
+## 🔀 Efecto de ramas en historial y archivos
+
+Cuando estás en una rama y realizas cambios:
+
+- Los commits quedan guardados **solo en esa rama**
+- El historial (`git log`) será diferente entre ramas
+
+Si luego cambias de rama:
+
+```sh
+git checkout otraRama
+```
+
+Verás que los cambios **no aparecen** en la otra rama.
+
+👉 ¡Esto es precisamente el poder de trabajar con ramas!
+
+---
+
+## 🛠️ Comandos para manejar ramas
+
+### ✅ Crear una rama
+
+```sh
+git branch branchName
+```
+
+### ✅ Crear y moverte a una rama al mismo tiempo
+
+```sh
+git checkout -b branchName
+```
+
+### ✅ Cambiar de rama
+
+```sh
+git checkout branchName
+```
+
+### ✅ Publicar una rama local en el repositorio remoto
+
+```sh
+git push origin branchName
+```
+
+---
+
+## 👁️ Visualizar flujo de trabajo con `gitk`
+
+Para abrir la vista gráfica:
+
+```sh
+gitk
+```
+
+`gitk` fue el primer visor gráfico creado para Git y continúa siendo una herramienta muy útil para:
+
+✅ Comprender la estructura de ramas  
+✅ Analizar merges  
+✅ Inspeccionar commits  
+✅ Ver el progreso del proyecto de forma ordenada
+
+---
+
+## 🎯 Conclusión
+
+Dominar el manejo de ramas es clave para:
+
+- Trabajar colaborativamente
+- Mantener código limpio
+- Evitar conflictos
+- Mejorar productividad
+
+¡Practica creando y cambiando ramas para afianzar el concepto!
+
+---
+
+# 👥 Clase 09 — Configurar múltiples colaboradores en un repositorio de GitHub
+
+Trabajar de forma colaborativa en GitHub requiere permisos y configuraciones adecuadas.  
+Aunque cualquier persona puede **clonar o descargar** un repositorio público, **no podrán crear commits ni ramas** a menos que se les otorgue acceso.
+
+Si el repositorio es **privado**, solo podrán verlo y colaborar **si reciben una invitación** del dueño.
+
+---
+
+## ✅ ¿Por qué agregar colaboradores?
+
+Permite que otros puedan:
+
+- Subir commits
+- Crear ramas
+- Trabajar con pull requests
+- Participar en el desarrollo del proyecto
+
+---
+
+## 🔧 Cómo agregar colaboradores en GitHub
+
+Ruta:
+
+```
+Repositorio > Settings > Collaborators
+```
+
+Luego:
+
+1. Ingresa el **email** o **username** del colaborador
+2. Envía la invitación
+3. Espera que el colaborador la acepte
+
+---
+
+## ✏️ Corregir mensaje de último commit (amend)
+
+Si escribiste mal un mensaje de commit:
+
+```sh
+git commit --amend
+git pull origin main
+git push --set-upstream origin main
+```
+
+`--amend` permite modificar el mensaje del **último commit**.
+
+---
+
+## 🚀 Comienzo del colaborador
+
+Pasos básicos:
+
+```sh
+cd Documentos           # Abrir ubicación
+mkdir class-git         # Crear carpeta de trabajo
+ls -al                  # Ver archivos y directorios
+```
+
+### ❌ Importante:
+✅ El colaborador **NO** debe usar `git init`.
+
+Debe:
+
+✔ Buscar el repositorio en GitHub  
+✔ Clonarlo usando HTTPS
+
+### Clonar repositorio
+
+```sh
+git clone url-copiada-github
+```
+
+> Si el repositorio es **público**, no pedirá usuario ni contraseña.
+
+---
+
+## 🧠 Editar archivos y realizar commits
+
+Abrir el proyecto:
+
+```sh
+code .
+```
+
+O editar directamente:
+
+```sh
+vim historia.txt
+```
+
+Escribir dentro:
+
+```
+Aquí está un nuevo colaborador
+```
+
+Guardar en Linux (Vim):
+
+```
+ctrl + x
+s
+enter
+```
+
+Guardar en Windows (Git Bash):
+
+```
+esc
+:wq!
+```
+
+---
+
+## 📌 Comandos esenciales del colaborador
+
+```sh
+git status
+git commit -am "Mi primer commit, estoy muy emocionado!!!"
+git pull origin main
+git fetch
+git branch
+git log
+git log --graph
+git push origin main
+```
+
+---
+
+## ❌ Error: Acceso denegado
+
+Esto sucede cuando:
+
+- El dueño no agregó al colaborador
+- El colaborador no aceptó la invitación
+
+### Solución:
+
+1. El dueño va a `Settings > Collaborators`
+2. Agrega al usuario o email
+3. El colaborador acepta la invitación por GitHub o email
+
+---
+
+## ✅ Después de aceptar invitación
+
+Intentar nuevamente:
+
+```sh
+git pull origin main
+git push origin main
+```
+
+Ingresar:
+
+- Nombre de usuario
+- Contraseña/token
+
+---
+
+## 👀 El dueño del repositorio no ve los cambios
+
+Debe actualizar:
+
+```sh
+git pull origin main
+git fetch
+git log --stat
+```
+
+Ahí podrá ver el commit del colaborador.
+
+---
+
+## 🔀 Trabajo colaborativo profesional
+
+A partir de este punto se recomienda:
+
+- Crear ramas por funcionalidad
+- Ejemplo:
+
+| Responsable | Rama |
+|------------|-------|
+| Dueño      | header |
+| Colaborador| footer |
+
+### Al finalizar:
+Se realiza un **merge** al finalizar las tareas.
+
+---
+
+## 🧠 Recuerda
+
+Git es como una base de datos del historial completo del proyecto:
+- Quién cambió qué
+- Cuándo
+- Cómo evolucionó el código
+
+Aprender colaboración es esencial para trabajar profesionalmente.
+
+---
+
+✍️ *Autor:* Rubén Marchisio
+📅 *Clase 09 — Colaboradores en GitHub*
