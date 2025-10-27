@@ -33,6 +33,36 @@ class Producto {
     }
 } //Fin clase Producto
 
+// video 4
+
+class Orden {
+    static contadorOrdenes = 0;
+    static get MAX_PRODUCTOS() {
+        return 5;
+    }
+
+    constructor() {
+        this.idOrden = ++Orden.contadorOrdenes;
+        this.productos = [];
+        this.contadorProductosAgregados = 0;
+    }
+
+    get getIdOrden() {
+        return this.idOrden;
+    }
+
+    agregarProducto(producto) {
+        if (this.productos.length < Orden.MAX_PRODUCTOS) {
+            this.productos.push(producto); // Tenemos dos tipos de sintaxis: 1
+            //this.productos[this.contadorProductosAgregados++] = producto; // segunda sintaxis
+            this.contadorProductosAgregados++;
+        } else {
+            console.log('No se pueden agregar más productos a la orden');
+        }
+    } // Fin del método agregarProducto
+
+} // Fin de la clase Orden
+
 let producto1 = new Producto('Camisa', 500);
 console.log(producto1.toString());
 let producto2 = new Producto('Pantalón', 700);
