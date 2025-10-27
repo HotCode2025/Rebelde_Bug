@@ -61,7 +61,25 @@ class Orden {
         }
     } // Fin del método agregarProducto
 
+    // 10.5 Pruebas con la relación de Agregación
+    calcularTotal() {
+        let totalVenta = 0;
+        for (let producto of this.productos) {
+            totalVenta += producto.getPrecio;
+        } // Fin del ciclo for
+        return totalVenta;
+    } // Fin del método calcularTotal
+
+    mostrarOrden() {
+        let productosOrden = '';
+        for (let producto of this.productos) {
+            productosOrden += '\n{' + producto.toString() + '} ';
+        } // Fin del ciclo for
+        console.log(`Orden: ${this.idOrden}, Total: $${this.calcularTotal()}, Productos: ${productosOrden}`);
+    } // Fin del método mostrarOrden
 } // Fin de la clase Orden
+
+
 
 let producto1 = new Producto('Camisa', 500);
 console.log(producto1.toString());
