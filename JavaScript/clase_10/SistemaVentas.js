@@ -37,7 +37,7 @@ class Producto {
 
 class Orden {
     static contadorOrdenes = 0;
-    static get MAX_PRODUCTOS() {
+    static get MAX_PRODUCTOS() { //Simular una constante
         return 5;
     }
 
@@ -82,6 +82,30 @@ class Orden {
 
 
 let producto1 = new Producto('Camisa', 500);
-console.log(producto1.toString());
 let producto2 = new Producto('Pantalón', 700);
-console.log(producto2.toString());
+let producto3 = new Producto('Chamarra', 1500);
+
+// 10.5 Pruebas con la relación de Agregación (video 6)
+
+let orden1 = new Orden();
+orden1.agregarProducto(producto1);
+orden1.agregarProducto(producto2);
+orden1.agregarProducto(producto3);
+orden1.mostrarOrden();
+
+let orden2 = new Orden();
+orden2.agregarProducto(producto1);
+orden2.agregarProducto(producto2);
+orden2.agregarProducto(producto3);
+orden2.mostrarOrden();
+
+// Prueba del límite de productos por orden
+let orden3 = new Orden();
+orden3.agregarProducto(producto1);
+orden3.agregarProducto(producto2);
+orden3.agregarProducto(producto3);
+orden3.agregarProducto(producto1);
+orden3.mostrarOrden();
+orden3.agregarProducto(producto2); // 5to producto
+orden3.agregarProducto(producto3); // 6to producto - Debe mostrar un mensaje de error
+
