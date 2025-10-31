@@ -1,0 +1,18 @@
+//Clase 9 POO 
+package Test;
+
+import domain.Cliente;
+import domain.Empleado;
+import java.util.Date;
+
+public class TestHerencia {
+    public static void main(String[] args) {
+        Empleado empleado1 = new Empleado("Rebelde Bug", 9999999);
+        System.out.println("empleado1 = " + empleado1);
+        
+        Date fecha1 = new Date();
+        
+        Cliente cliente1 = new Cliente(fecha1, true, "Alan", 'M', 28, "3 de Enero 1993"  );
+        System.out.println("cliente1 = " + cliente1);
+    }   
+}
