@@ -1,0 +1,38 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>90</x><y>30</y><w>300</w><h>640</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>0</y><w>150</w><h>30</h></coordinates><panel_attributes>Dominio, direccion</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>50</y><w>270</w><h>240</h></coordinates><panel_attributes>&lt;&lt;Orden&gt;&gt;
+--
+-idOrden
+-producto[]: Producto
+-ContadorOrdenes: int
+MAX_PRODUCTOS: int = 10
+--
++Orden()
++agregarProducto(producto: Producto): void
++calcularTotal():() double
++mostarOrden(): void
+--
+Responsibilidades
+--Crear objetos Orden
+--Administrar los productos</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>360</y><w>270</w><h>290</h></coordinates><panel_attributes>&lt;&lt;Producto&gt;&gt;
+--
+-idProducto: int
+-nombre:String
+-precio: double
+ .contadorProductos: int_
+--
+-Producto()
++Producto(nombre: String, precio: double)
++getIdProducto(): int
++getNombre(): String
++setNombre(nombre: String): void
++getPrecio(): double
++setPrecio(precio: double): void
++toString(): String
+--
+Responsabilidades
+-Crear objetos de tipo producto</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>30</y><w>300</w><h>350</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>60</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;VentasTest&gt;&gt;
+--
++main(args: String[]): void
+--
+Responsibilities
+--Ejecutar la prueba de la aplicacion de ventas</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>0</y><w>100</w><h>30</h></coordinates><panel_attributes>TestVentas</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>0</y><w>470</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.&gt;&gt;</panel_attributes><additional_attributes>10;10;450;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>280</y><w>240</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;Un producto se agrega a una orden&gt;&gt;</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
