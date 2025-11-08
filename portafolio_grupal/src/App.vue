@@ -4,6 +4,7 @@ import { ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import Inicio from "@/components/Inicio.vue";
 import DatosIntegrantes from "@/components/DatosIntegrantes.vue";
+import Habilidades from "@/components/Habilidades.vue";
 import Educacion from "@/components/Educacion.vue";
 import Experiencia from "@/components/Experiencia.vue";
 import Proyectos from "@/components/Proyectos.vue";
@@ -18,6 +19,7 @@ function onChange(key) { section.value = key; }
   <main>
     <Inicio v-if="section === 'inicio'" @change="onChange" />
     <DatosIntegrantes v-else-if="section === 'integrantes'" />
+    <Habilidades v-else-if="section === 'habilidades'" />
     <Educacion v-else-if="section === 'educacion'" />
     <Experiencia v-else-if="section === 'experiencia'" />
     <Proyectos v-else-if="section === 'proyectos'" />
