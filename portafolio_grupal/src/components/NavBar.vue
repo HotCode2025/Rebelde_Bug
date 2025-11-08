@@ -9,6 +9,7 @@ const props = defineProps({
 const items = [
   { key: "inicio", label: "Inicio" },
   { key: "integrantes", label: "Integrantes" },
+  { key: "habilidades", label: "Habilidades" },
   { key: "educacion", label: "Educación" },
   { key: "experiencia", label: "Experiencia" },
   { key: "proyectos", label: "Proyectos" },
