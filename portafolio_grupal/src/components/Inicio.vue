@@ -19,7 +19,8 @@
         Creemos que la mejor forma de crecer es compartiendo conocimientos y experiencias.
       </p>
 
-      <a href="#integrantes" class="boton">Conocé al equipo</a>
+      <!--<a href="#integrantes" class="boton">Conocé al equipo</a>-->
+      <a class="boton" @click="() => $emit('change', 'integrantes')">Conocé al equipo</a>
     </div>
 
     <div class="decoracion">
