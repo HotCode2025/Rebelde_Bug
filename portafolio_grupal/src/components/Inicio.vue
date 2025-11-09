@@ -37,57 +37,109 @@
   text-align: center;
   min-height: 90vh;
   padding: 2rem;
-  background-color: #f9fafb; /* Fondo claro */
-  color: #333;
+  background: radial-gradient(circle at center, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+  color: var(--color-text);
+  overflow: hidden;
+  position: relative;
 }
 
 .contenido {
   max-width: 800px;
   padding: 1.5rem;
+  z-index: 2;
 }
 
 .titulo {
+  font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #222;
+  margin-bottom: 1.2rem;
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(155, 92, 255, 0.6);
 }
 
 .resaltado {
-  color: #0077cc;
+  color: var(--color-secondary);
+  text-shadow: 0 0 10px var(--color-secondary);
 }
 
 .descripcion {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-subtext);
+  margin-bottom: 1.2rem;
 }
 
 .boton {
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.8rem;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #0077cc;
-  color: white;
-  border-radius: 0.6rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 0.8rem;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(155, 92, 255, 0.5);
 }
 
 .boton:hover {
-  background-color: #005fa3;
-  transform: scale(1.03);
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px var(--color-secondary);
+  transform: translateY(-3px);
 }
 
 .decoracion {
   margin-top: 2rem;
+  z-index: 1;
+  position: relative;
 }
 
 .decoracion img {
-  width: 100px;
+  width: 120px;
   opacity: 0.8;
+  filter: drop-shadow(0 0 10px var(--color-tertiary));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.decoracion img:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 20px var(--color-secondary));
+}
+
+.inicio::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(155, 92, 255, 0.15), transparent 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.3rem;
+  }
+  .descripcion {
+    font-size: 1rem;
+  }
+  .boton {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.8rem;
+  }
+  .decoracion img {
+    width: 90px;
+  }
 }
 </style>
