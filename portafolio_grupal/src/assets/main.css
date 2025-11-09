@@ -9,26 +9,59 @@
 
 html, body, #app {
   height: 100%;
+  scroll-behavior: smooth;
 }
+
+/* ==== Paleta de colores global ==== */
+:root {
+  /* Fondo y texto */
+  --color-bg: #0b0b0c;
+  --color-bg-alt: #141416;
+  --color-text: #e8e8e8;
+  --color-subtext: #b0b0b0;
+
+  /* Tonos neón principales */
+  --color-primary: #9b5cff;   /* violeta neón */
+  --color-secondary: #00ffc8; /* verde-agua neón */
+  --color-tertiary: #00a8ff;  /* azul brillante */
+
+  /* Tonos de apoyo */
+  --color-accent: #ff3b3f;    /* rojo neón */
+  --color-warm: #ff7133;      /* naranja cálido */
+}
+
+/* ==== Tipografías ==== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-  color: #111827;
-  background: #f9fbfc;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ==== Titulares ==== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(155, 92, 255, 0.6);
+  letter-spacing: 1px;
 }
 
 /* ==== Enlaces por defecto ==== */
 a {
-  color: inherit;
+  color: var(--color-secondary);
   text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--color-tertiary);
+  text-shadow: 0 0 6px var(--color-tertiary);
 }
 
 /* ==== App container libre (sin max-width, sin centrado raro) ==== */
@@ -36,7 +69,80 @@ a:hover {
   width: 100%;
   min-height: 100%;
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
+}
+
+/* ==== Botones base ==== */
+button,
+.btn {
+  background: var(--color-primary);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  box-shadow: 0 0 15px var(--color-secondary);
+}
+
+/* ==== Secciones ==== */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ==== Responsividad general ==== */
+@media (max-width: 1024px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  section {
+    padding: 2.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+  button, .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* ==== Scroll suave para anchors (#integrantes, etc.) ==== */
