@@ -28,6 +28,7 @@ import icono1 from '../assets/bug-preview.png';
       <img :src="icono1" alt="Icono grupo" />
     </div>
   </section>
+ 
 </template>
 
 <style scoped>
@@ -96,8 +97,7 @@ import icono1 from '../assets/bug-preview.png';
 
 .decoracion {
   margin-top: 2rem;
-  z-index: 1;
-  position: relative;
+  transform: translateY(-20px);
 }
 
 .decoracion img {
