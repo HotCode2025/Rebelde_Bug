@@ -1,5 +1,6 @@
 <script setup>
 // Nada de lógica, solo presentación
+import icono1 from '../assets/bug-preview.png';
 </script>
 
 <template>
@@ -24,7 +25,7 @@
     </div>
 
     <div class="decoracion">
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Icono grupo" />
+      <img :src="icono1" alt="Icono grupo" />
     </div>
   </section>
 </template>
