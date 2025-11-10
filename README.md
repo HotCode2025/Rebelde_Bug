@@ -24,6 +24,11 @@ En este repositorio iremos subiendo los ejercicios, proyectos y prácticas desar
 - [Clase 3 - Cambios en GitHub: de master a main](#clase-3---cambios-en-github-de-master-a-main)
 - [Clase 04 - Tu primer push](#-clase-04)
 - [Clase 05 - Git tag y versiones en GitHub](#-clase-05)
+- [Clase 06 y 07 - Error de duplicado de tags](#-clase-06-y-07)
+- [Clase 08 - Manejo de Ramas en GitHub](#-clase-08--manejo-de-ramas-en-github)
+- [Clase 09 - Colaboradores en GitHub](#-clase-09--configurar-múltiples-colaboradores-en-un-repositorio-de-github)
+- [Clase 10 - Flujo de trabajo profesional](#clase-10--flujo-de-trabajo-profesional)
+- [Clase 11 - Flujo de trabajo con archivos binarios](#clase-11--flujo-de-trabajo-profesional--archivos-binarios)
 
 ## Objetivo 🚀
 Este repositorio será nuestro espacio de trabajo grupal donde subiremos las **actividades de las clases** para organizarnos mejor y mantener un registro del progreso de todos.  
@@ -941,5 +946,65 @@ Aprender colaboración es esencial para trabajar profesionalmente.
 
 ---
 
-✍️ *Autor:* Rubén Marchisio
-📅 *Clase 09 — Colaboradores en GitHub*
+
+# CLASE 10 — Flujo de trabajo profesional
+
+## Haciendo merge de ramas de desarrollo a main
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+Una buena práctica de flujo de trabajo sería la siguiente:
+
+1. Crear ramas.
+2. Asignar una rama a cada programador.
+3. El programador baja el repositorio con:
+   ```bash
+   git pull origin master
+   ```
+4. El programador cambia de rama.
+5. El programador trabaja en esa rama y hace commits.
+6. El programador sube su trabajo con:
+   ```bash
+   git push origin nombre_rama
+   ```
+7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios.
+
+---
+
+# CLASE 11 — Flujo de trabajo profesional → Archivos binarios
+
+Las imágenes cargadas directamente en el repositorio representan un problema: son archivos pesados y, si las subimos al repositorio, cada vez que hagamos cambios estaremos trayendo esas imágenes nuevamente.  
+Estos archivos son **binarios para GitHub**, y mientras más binarios carguemos, más pesado será el repositorio, algo que **no forma parte de las buenas prácticas**.
+
+### Límites y recomendaciones
+
+- Cada commit tiene un tamaño máximo permitido de **100 MB**.  
+- Si incluimos un archivo binario que pese más que eso, **no podremos subir el commit**.  
+- Ese archivo quedará “arrastrado” en el historial, generando errores al intentar hacer push.  
+
+> ⚠️ **Recomendación:** las imágenes, videos u otros binarios pesados deben alojarse en un servidor externo o CDN, y no dentro del repositorio.
+
+---
+
+# Buenas prácticas generales de repositorios
+
+1. **Usar `.gitignore` correctamente:**  
+   Asegurarse de ignorar archivos innecesarios como dependencias, configuraciones locales o binarios.
+
+2. **Mantener una estructura clara de carpetas:**  
+   Organizar el código fuente, la documentación y los recursos en directorios separados.
+
+3. **Documentar siempre:**  
+   Incluir un `README.md` con la descripción del proyecto, instrucciones de instalación, uso y créditos.
+
+4. **Commits pequeños y descriptivos:**  
+   Evitar grandes cambios sin explicación. Cada commit debe reflejar una acción concreta.
+
+5. **Usar issues y pull requests:**  
+   Permiten llevar control del trabajo colaborativo y mantener el historial limpio.
+
+6. **Revisar antes de mergear:**  
+   Siempre probar los cambios antes de unir una rama a `main` o `master`.
+
+7. **Evitar archivos pesados:**  
+   No incluir archivos multimedia, ejecutables o datos grandes. Usar enlaces externos o almacenamiento dedicado.
