@@ -8,7 +8,7 @@ import Habilidades from "@/components/Habilidades.vue";
 import Educacion from "@/components/Educacion.vue";
 import Experiencia from "@/components/Experiencia.vue";
 import Proyectos from "@/components/Proyectos.vue";
-import Contacto from "@/components/Contacto.vue";
+import Intereses from "@/components/Intereses.vue";
 
 const section = ref("inicio");
 function onChange(key) { section.value = key; }
@@ -24,7 +24,7 @@ function onChange(key) { section.value = key; }
     <Educacion v-else-if="section === 'educacion'" />
     <Experiencia v-else-if="section === 'experiencia'" />
     <Proyectos v-else-if="section === 'proyectos'" />
-    <Contacto v-else-if="section === 'contacto'" />
+    <Intereses v-else-if="section === 'intereses'" />
   </main>
 </template>
 
